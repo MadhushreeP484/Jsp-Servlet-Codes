@@ -1,0 +1,29 @@
+.topnav {
+	background-color: transparent; 
+}
+button {
+	border-color: black;
+	border: 2px solid;
+	margin: 4px 2px;
+	border-radius: 5px;
+	box-shadow: 0 2px;
+	font-size: 16px;
+	width: 80px;
+}
+button:hover{background-color: silver;}
+body {
+   /* background-image: url("https://pbs.twimg.com/media/E0nPEDEWEAEVMe8.jpg");*/
+   background-image: url("https://img.freepik.com/premium-vector/vector-cartoon-style-flat-illustration-hospital-building_134830-781.jpg?w=2000");
+	background-repeat: no-repeat;
+    background-size: 1540px 750px;
+}
+.content{
+    margin-left: 620px;
+    margin-top: 50px;
+    border-style: solid;
+    width: 250px;
+    height: 200px;
+    border-color: black;
+    box-shadow: 10px 10px 5px black;
+    border-radius: 8px; 
+}

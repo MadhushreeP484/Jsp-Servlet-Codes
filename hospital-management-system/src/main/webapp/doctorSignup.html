@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Doctor Signup</title>
+</head>
+<body>
+<form action="doctorSaveAction" method="post">
+<h1>Enter Details</h1>
+<table>
+<tr><td>
+<label for="name">Name</label></td><td>
+<input type="text" name="name" id="name"></td>
+<tr><td>
+<label for="email">Email</label></td><td>
+<input type="email" name="email" id="email"></td>
+<tr><td>
+<label for="phone">Phone Number</label></td><td>
+<input type="tel" pattern="[0-9]{10}" name="phone" id="phone"></td>
+<tr><td>
+<label for="dob">Data of Birth</label></td><td>
+<input type="date" name="dob" id="dob"></td>
+<tr><td>
+<label for="qualification">Qualification</label></td><td>
+<input type="text" name="qualification" id="qualification"></td>
+<tr><td>
+<label for="specialisation">Specialization</label></td><td>
+<input type="text" name="specialization" id="specialization"></td>
+<tr><td>
+<label for="gender">Gender</label></td><td>
+<input type="radio" name="gender" value="male" id="gender">Male
+<input type="radio" name="gender" value="female" id="gender">Female</td>
+<tr><td>
+<label for="password">Password</label></td><td>
+<input type="password" name="password" id="password"></td>
+<tr><td>
+<label for="cPassword">Confirm Password</label></td><td>
+<input type="password" name="cPassword" id="cPassword"></td>
+<tr><td>
+<button type="reset">Cancel</button></td>
+<td>
+<button type="submit">Save</button></td>
+</table>
+</form>
+<div>
+<a href="selectRole.html"><button>Back</button></a>
+</div>
+</body>
+</html>

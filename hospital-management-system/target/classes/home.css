@@ -1,0 +1,19 @@
+body {
+	background-image: url("https://img.freepik.com/premium-vector/vector-cartoon-style-flat-illustration-hospital-building_134830-781.jpg?w=2000");
+	background-repeat: no-repeat;
+	background-size: 1535px 712px;
+}
+.topnav {
+	background-color:transparent; ;
+}
+button {
+	border-color: black;
+	border: 2px solid;
+	margin: 4px 2px;
+	border-radius: 5px;
+	box-shadow: 0 2px;
+	font-size: 16px;
+	width: 250px;
+	margin-left: 175px;
+}
+button:hover{background-color: silver;}
