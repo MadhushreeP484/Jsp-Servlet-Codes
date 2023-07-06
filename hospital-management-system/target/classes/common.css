@@ -1,9 +1,4 @@
-body {
-   /* background-image: url("https://pbs.twimg.com/media/E0nPEDEWEAEVMe8.jpg");*/
-   background-image: url("https://img.freepik.com/premium-vector/vector-cartoon-style-flat-illustration-hospital-building_134830-781.jpg?w=2000");
-	background-repeat: no-repeat;
-    background-size: 1540px 750px;
-}
+<style type="text/css">
 .topnav{
     background-color: transparent;
     align-items: center;
@@ -44,3 +39,4 @@ input::-webkit-input-placeholder{
 	font-size: 17px;
 	font-weight: bold;
 }
+</style>
