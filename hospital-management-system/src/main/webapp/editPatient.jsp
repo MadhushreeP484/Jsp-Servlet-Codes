@@ -1,28 +1,38 @@
+<%@page import="org.apache.commons.codec.binary.Base64"%>
+<%@page import="com.jsp.hospital.dao.PatientDaoImpl"%>
+<%@page import="com.jsp.hospital.dao.PatientDao"%>
 <%@page import="com.jsp.hospital.dto.PatientDto"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Edit Patient Details</title>
+<link href="css\common.css" rel="stylesheet">
 </head>
 <body>
-<%List<PatientDto> list=(List<PatientDto>)request.getAttribute("list"); %>
-<table border="1">
-		<tr>
-			<td>Id</td><td>Name</td><td>Phone</td><td>Gender</td><td>Dob</td><td>Age</td><td>Update</td>
-			<%for (PatientDto dto : list) {%>
-		<tr>
-			<td><input type="number" name="id" value="<%=dto.getId()%>" readonly="readonly"></td>
-			<td><input type="text" name="name" value="<%=dto.getName()%>" readonly="readonly"></td>
-			<td><input type="tel" pattern="[0-9]{10}" name="phone" value="<%=dto.getPhone()%>"></td>
-			<td><input type="text" name="gender" value="<%=dto.getGender()%>" readonly="readonly"></td>
-			<td><input type="Date" name="dob" value="<%=dto.getDob()%>" readonly="readonly"></td>
-			<td><input type="number" name="age" value="<%=dto.getAge()%>" readonly="readonly"></td>
-			<td><a href="editPatientDetails?pId=<%=dto.getId()%>"><button>Update</button></a></td>
-	<%} %>
-	</table>
+	<%if (session.getAttribute("staff") == null) {
+		response.getWriter().print("<h1 style='color:red'>Session Expired, Login Again</h1>");
+		request.getRequestDispatcher("login.html").include(request, response);
+	} else {
+		PatientDto patientDto=(PatientDto) request.getAttribute("patientDto");%>
+		<div class="topnav"><a href="editPatientById.html"><button>Back</button></a></div><br>
+	<form action="editPatientDetails" method="post" enctype="multipart/form-data">
+		<table border="1">
+			<tr><td>Id</td><td>Name</td><td>Phone</td><td>Gender</td><td>Dob</td><td>Age</td><td>Picture</td><td>Update</td>
+			<tr>
+				<td><input type="number" name="id" value="<%=patientDto.getId()%>" readonly="readonly"></td>
+				<td><input type="text" name="name" value="<%=patientDto.getName()%>"></td>
+				<td><input type="tel" pattern="[0-9]{10}" name="phone" value="<%=patientDto.getPhone()%>"></td>
+				<td><input type="text" name="gender" value="<%=patientDto.getGender()%>" readonly="readonly"></td>
+				<td><input type="Date" name="dob" value="<%=patientDto.getDob()%>"></td>
+				<td><input type="number" name="age" value="<%=patientDto.getAge()%>" readonly="readonly"></td>
+				<td><%String base64 = Base64.encodeBase64String(patientDto.getPicture());%>
+					<img height="100" width="100" alt="unknown" src="data:image/jpeg;base64,<%=base64%>"></td>
+				<td><button type="submit">Update</button></td>
+		</table>
+	</form>
+	<%}%>
 </body>
 </html>

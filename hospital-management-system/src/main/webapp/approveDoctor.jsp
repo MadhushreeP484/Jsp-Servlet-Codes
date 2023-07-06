@@ -7,8 +7,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Doctor Approval Page</title>
+<link href="css\common.css" rel="stylesheet">
 </head>
 <body>
+<div class="topnav">
+<a href="adminHome.jsp"><button>Back</button></a>
+</div><br>
 	<%
 	List<DoctorDto> list = (List<DoctorDto>) request.getAttribute("list");
 	%>
@@ -24,6 +28,5 @@
 			<td><a href="approveDoctorStatus?dId=<%=dto.getDId()%>"><button>Approve</button></a></td>
 	<%} %>
 	</table>
-	<a href="adminHome.jsp"><button>Back</button></a>
 </body>
 </html>

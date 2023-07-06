@@ -11,5 +11,7 @@ public interface PatientDao {
 	public List<PatientDto> fetchAllPatient();
 	
 	public void updatePatient(PatientDto dto);
+	
+	public PatientDto fetchPatientById(int id);
 
 }

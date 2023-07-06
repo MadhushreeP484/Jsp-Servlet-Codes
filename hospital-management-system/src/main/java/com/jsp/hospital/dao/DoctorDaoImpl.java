@@ -99,4 +99,10 @@ public class DoctorDaoImpl implements DoctorDao {
 		}
 	}
 
+	@Override
+	public List<DoctorDto> fetchAvailableDoctors() {
+		System.out.println("Invoked fetchAvailableDoctors");
+		return this.entityManager.createQuery("select data from DoctorDto data where data.availability=true").getResultList();
+	}
+
 }

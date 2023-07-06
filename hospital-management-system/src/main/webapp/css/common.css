@@ -1,0 +1,42 @@
+<style type="text/css">
+.topnav{
+    background-color: transparent;
+    align-items: center;
+}
+button {
+	border-color: black;
+	border: 2px solid;
+	margin: 4px 2px;
+	border-radius: 5px;
+	box-shadow: 0 2px;
+	font-size: 16px;
+}
+button:hover{background-color: silver;}
+label{
+    font-weight: bold;
+    font-size: larger;
+}
+h1{
+    padding-left: 610px;
+    color: black;
+}
+input::-webkit-input-placeholder{
+    font-size: 16px;
+}
+.tablecontent{
+    border-style: solid;
+    border-color: black;
+    background-color:gray;
+    position: relative;
+    left: 575px;
+    top: 8px;
+    width: 25.2%;
+    height: 180px;
+    box-shadow: 10px 10px 5px black;
+    border-radius: 8px;
+}
+.fontlink{
+	font-size: 17px;
+	font-weight: bold;
+}
+</style>

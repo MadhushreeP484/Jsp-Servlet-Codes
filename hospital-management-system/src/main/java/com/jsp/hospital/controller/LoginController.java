@@ -36,6 +36,7 @@ public class LoginController extends HttpServlet {
 
 		if (id == 99999999) {
 			if(password.equals("admin")) {
+				req.getSession().setAttribute("admin", "admin");
 				resp.getWriter().print("<h1 style='color:green'>Login is Success</h1>");
 				req.getRequestDispatcher("adminHome.jsp").include(req, resp);
 				System.out.println("Login is Success");
@@ -49,6 +50,7 @@ public class LoginController extends HttpServlet {
 			if (dto!=null) {
 				if(dto.getPassword().equals(password)) {
 					if(dto.isStatus()) {
+						req.getSession().setAttribute("doctor", dto);
 						resp.getWriter().print("<h1 style='color:green'>Login Success</h1>");
 						req.getRequestDispatcher("doctorHome.html").forward(req, resp);
 					}else {
@@ -68,6 +70,7 @@ public class LoginController extends HttpServlet {
 			StaffDto dto = this.staffDao.fetchStaffDataById(id);
 			if (dto.getPassword().equals(password))
 				if(dto.isStatus()) {
+					req.getSession().setAttribute("staff", dto);
 					resp.getWriter().print("<h1 style='color:green'>Login Success</h1>");
 					req.getRequestDispatcher("staffHome.html").forward(req, resp);
 				}else {

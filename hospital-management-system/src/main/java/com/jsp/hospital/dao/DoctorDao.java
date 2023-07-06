@@ -19,5 +19,7 @@ public interface DoctorDao {
 	public List<DoctorDto> fetchAllDoctor();
 	
 	public void updateDoctorStatus(int id);
+	
+	public List<DoctorDto> fetchAvailableDoctors();
 
 }

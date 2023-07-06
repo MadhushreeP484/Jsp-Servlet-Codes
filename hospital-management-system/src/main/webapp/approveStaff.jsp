@@ -9,8 +9,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Staff Approval Page</title>
+<link href="css\common.css" rel="stylesheet">
 </head>
 <body>
+<div class="topnav"><a href="adminHome.jsp"><button>Back</button></a></div><br>
 	<%
 	List<StaffDto> list = (List<StaffDto>)request.getAttribute("list");
 	%>
@@ -25,6 +27,5 @@
 			<td><a href="approveStaffStatus?sId=<%=dto.getSId()%>"><button>Approve</button></a></td>
 	<%}%>
 	</table>
-	<a href="adminHome.jsp"><button>Back</button></a>
 </body>
 </html>

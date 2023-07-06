@@ -18,7 +18,8 @@ public class LogoutController extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.getWriter().print("<h1> Logged out Successfully");
+		req.getSession().invalidate();
+		resp.getWriter().print("<h1 style='color:red'> Logged out Successfully");
 		req.getRequestDispatcher("home.html").include(req, resp);
 	}
 }

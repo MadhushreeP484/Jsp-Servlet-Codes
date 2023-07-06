@@ -47,4 +47,14 @@ public class PatientDaoImpl implements PatientDao {
 		this.entityManager.merge(dto);
 		this.transaction.commit();
 	}
+
+	@Override
+	public PatientDto fetchPatientById(int id) {
+		System.out.println("Invoked fetchPatientById");
+		PatientDto dtoFromDB=this.entityManager.find(PatientDto.class, id);
+		if(dtoFromDB==null)
+			return null;
+		else
+			return dtoFromDB;
+	}
 }
